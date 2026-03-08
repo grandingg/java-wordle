@@ -39,7 +39,7 @@ public class WordleDictionary {
         for (int i = 0; i < 5; i++) {
             char guessChar = userGuess.charAt(i);
             if (guessChar == answer.charAt(i)) {
-                sb.setCharAt(i,'+');
+                sb.setCharAt(i, '+');
                 letterCount.put(guessChar, letterCount.get(guessChar) - 1);
             }
         }

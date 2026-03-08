@@ -45,7 +45,7 @@ public class WordleGame {
         return steps;
     }
 
-    public String compareWords (String userGuess) throws FinishedGameException, WordLengthException, WordNotInDictionaryException {
+    public String compareWords(String userGuess) throws FinishedGameException, WordLengthException, WordNotInDictionaryException {
         if (isFinished) {
             throw new FinishedGameException("Игра уже завершена");
         }
@@ -66,7 +66,7 @@ public class WordleGame {
             isFinished = true;
         } else {
             steps--;
-             if (steps == 0) {
+            if (steps == 0) {
                 isFinished = true;
             }
         }
@@ -78,14 +78,14 @@ public class WordleGame {
 
         hintWords.removeAll(history.keySet());
 
-        for(Map.Entry<String, String> entry : history.entrySet()) {
+        for (Map.Entry<String, String> entry : history.entrySet()) {
             String guess = entry.getKey();
             String hint = entry.getValue();
 
 
             Iterator<String> iterator = hintWords.iterator();
 
-            while(iterator.hasNext()) {
+            while (iterator.hasNext()) {
                 String word = iterator.next();
                 String result = dictionary.compareLetter(word, guess);
 
