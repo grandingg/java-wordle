@@ -4,7 +4,6 @@ import ru.yandex.exceptions.WordLengthException;
 import ru.yandex.exceptions.WordNotInDictionaryException;
 import ru.yandex.exceptions.ZeroHintsException;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
