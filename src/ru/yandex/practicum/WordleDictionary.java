@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public class WordleDictionary {
     private List<String> words;
+    private static final int WORD_LENGTH = 5;
 
     public WordleDictionary(List<String> words) {
         this.words = new ArrayList<>(words);
@@ -25,7 +26,7 @@ public class WordleDictionary {
 
     public String compareLetter(String answer, String userGuess) throws WordLengthException {
 
-        if (userGuess.length() != 5) {
+        if (userGuess.length() != WORD_LENGTH) {
             throw new WordLengthException("Слово должно состоять из 5 букв", userGuess.length());
         }
 
@@ -36,7 +37,7 @@ public class WordleDictionary {
             letterCount.put(c, letterCount.getOrDefault(c, 0) + 1);
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < WORD_LENGTH; i++) {
             char guessChar = userGuess.charAt(i);
             if (guessChar == answer.charAt(i)) {
                 sb.setCharAt(i, '+');
@@ -44,7 +45,7 @@ public class WordleDictionary {
             }
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < WORD_LENGTH; i++) {
 
             if (sb.charAt(i) == '+') {
                 continue;
